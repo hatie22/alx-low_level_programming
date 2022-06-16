@@ -1,22 +1,23 @@
 #include "main.h"
+#include <ctype.h>
 /**
  * leet - encode a string into 1337
- * @s: string to be encoded
+ * @str: string to be encoded
  * Return: encoded string
  */
 
-char *leet(char *s)
+char *leet(char *str)
 {
 	int i, j;
 
 	char p[] = "AEOTL";
 	char k[] = "43071";
 
-	for (i = 0; s[i] != '\0'; i++)
+	for (i = 0; str[i] != '\0'; i++)
 	for (j = 0; p[j] != '\0'; j++)
 	{
-		if (toupper(s[i]) == p[j])
-			s[i] = k[j];
+		if (toupper(str[i]) == p[j])
+			str[i] = k[j];
 	}
-	return (s);
+	return (str);
 }
